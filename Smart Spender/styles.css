@@ -1,0 +1,173 @@
+/* ===== Base ===== */
+:root{
+  --green:#1c6b4c;          /* primary dark green */
+  --mint:#cfe3d6;           /* light green for phone */
+  --bg:#faf7f2;             /* warm off-white */
+  --ink:#1a1a1a;            /* main text color */
+  --muted:#6b6b6b;          /* secondary text color */
+  --radius:14px;              /* border radius */
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--ink);
+  background: var(--bg);
+  /* faint $ background pattern using a tiny inline SVG */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 100 100'%3E%3Ctext x='50' y='60' text-anchor='middle' fill='%23eae3d9' font-size='64'%3E%24%3C/text%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* Layout helpers */
+.container{ width:min(1100px, 92%); margin-inline:auto; }
+
+/* ===== Top bar ===== */
+.topbar{
+  background:#7fbf9f;  
+  padding:10px 14px;
+  display:flex; align-items:center; gap:12px;
+}
+.menu-btn{
+  font-size:22px; line-height:1;
+  background:transparent; border:0; color:#0e3b2a; cursor:pointer;
+}
+.search{ flex:1; display:flex; }
+.search input{
+  width:100%; border:0; padding:9px 12px; border-radius:999px;
+  background:#dcefe5; outline:2px solid transparent;
+}
+.icons{ display:flex; gap:10px; }
+.icon{ font-size:20px; }
+
+/* ===== Hero ===== */
+.hero{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items:center;
+  gap:40px;
+  padding:48px 0 24px;
+}
+
+.brand{ display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.logo{ font-size:38px; color:var(--green); }
+.name{ font-size:34px; letter-spacing:.2px; color:#174d38; }
+
+.eyebrow{
+  margin:.25rem 0 .5rem;
+  color:var(--muted);
+  font-size:.95rem;
+}
+.welcome{ font-size:1.4rem; margin:.25rem 0 1rem; }
+.lead{
+  line-height:1.5; max-width:52ch;
+}
+.highlight{ color: #7fbf9f; font-weight: bold; }
+
+.dots{ display:flex; gap:8px; margin-top:18px; }
+.dots span{
+  width:10px; height:10px; border-radius:50%;
+  background:#9fcab3;
+}
+.dots span:first-child{ background:var(--green); }
+
+/* ===== Phone mock ===== */
+.phone{
+  justify-self:center;
+  width:min(270px, 292%);
+  border:3px solid #222;
+  border-radius:36px;
+  background:white;
+  padding:18px 14px 24px;
+  position:relative;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+.notch{
+  position:absolute; left:50%; transform:translateX(-50%);
+  top:10px; width:70px; height:8px; background:#222; border-radius:12px;
+}
+.screen{
+  margin-top:22px;
+  background:var(--mint);
+  border-radius:22px;
+  padding:22px 18px;
+}
+.screen h2{ margin:0 0 8px; font-size:1.05rem; }
+.screen label{
+  display:block; font-size:.9rem; margin-top:10px;
+}
+.screen input{
+  width:100%;
+  padding:10px 12px; margin-top:6px;
+  border:1.5px solid #a8c6b7; border-radius:10px; outline:none;
+}
+.btn{
+  margin-top:14px;
+  width:100%; padding:12px;
+  background:var(--green); color:white; border:0; border-radius:10px;
+  font-weight:600; cursor:pointer;
+}
+.btn:active{ transform:translateY(1px); }
+.muted{ color:#2f4f40; font-size:.9rem; text-align:center; }
+.muted a{ color:#0f3d2b; text-decoration:underline; }
+
+
+/* ===== Responsive ===== */
+@media (max-width: 860px){
+  .hero{ grid-template-columns:1fr; padding-top:28px; }
+  .phone{ order:2; }
+}
+
+/* ===== Sign Up page ===== */
+.signup-header{
+  padding:20px 30px;
+}
+
+.signup-main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  min-height:80vh;
+}
+
+.signup-main h1{
+  font-size:1.6rem;
+  color:var(--green);
+  margin-bottom:40px;
+}
+
+.signup-form{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  width:min(350px, 90%);
+}
+
+.signup-form label{
+  font-size:.95rem;
+  text-align:left;
+  margin-bottom:4px;
+}
+
+.signup-form input{
+  padding:14px 12px;
+  border:2px solid #000;
+  border-radius:12px;
+  box-shadow:4px 3px 9px #000;
+  font-size:1rem;
+}
+
+.signup-form input:focus{
+  border-color:var(--green);
+  outline:none;
+  box-shadow:4px 4px 0px var(--green);
+}
+
+.signup-form .btn{
+  margin-top:20px;
+}
