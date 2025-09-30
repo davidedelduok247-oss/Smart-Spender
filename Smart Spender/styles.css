@@ -6,6 +6,8 @@
   --ink:#1a1a1a;            /* main text color */
   --muted:#6b6b6b;          /* secondary text color */
   --radius:14px;              /* border radius */
+  --light_green: #32c610;     /* Button color for questions */
+
 }
 
 *{ box-sizing:border-box; }
@@ -170,4 +172,18 @@ body{
 
 .signup-form .btn{
   margin-top:20px;
+}
+
+.signup-form .qbtn{
+  margin-top:14px;
+  width:100%; padding:12px;
+  background:var(--light_green); color:white; border:0; border-radius:10px;
+  font-weight:600; cursor:pointer;
+}
+
+.signup-form .qbtn:hover{
+    margin-top:14px;
+    width:100%; padding:12px;
+    background:var(--green); color:white; border:0; border-radius:10px;
+    font-weight:600; cursor:pointer;
 }
