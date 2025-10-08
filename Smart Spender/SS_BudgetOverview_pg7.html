@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Spender - Budget Overview</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="smart-spender-logo.png" alt="Smart Spender Logo" class="logo">
+    <h2>See where your <span style="color:#4CAF50;">money</span> goes and take control of your <span style="color:#4CAF50;">spending</span>...</h2>
+
+    <div style="max-width:500px;margin:0 auto;">
+      <canvas id="spendingChart"></canvas>
+    </div>
+
+    <div class="budget-summary">
+      <h3>Budget Overview 💰</h3>
+      <table style="margin:0 auto;">
+        <tr><td>Monthly Budget:</td><td>$2000</td></tr>
+        <tr><td>Total Spent:</td><td>$1865</td></tr>
+        <tr><td>Remaining:</td><td>$135</td></tr>
+      </table>
+    </div>
+
+    <div class="notes" style="margin-top:20px;">
+      <p>✅ You stayed within your budget — great job!</p>
+      <ul>
+        <li>You spent 22% more on dining this month. Consider eating out less next month.</li>
+        <li>Transport costs are lower than average. Keep it up!</li>
+        <li>Try setting a savings goal with the money left over.</li>
+      </ul>
+    </div>
+
+    <div class="nav-links" style="margin-top:40px;">
+      <a href="index.html">← Back to Home</a> |
+      <a href="page8.html">Next →</a>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('spendingChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Rent', 'Food', 'Transport', 'Entertainment', 'Other'],
+        datasets: [{
+          data: [41.2, 23.5, 17.6, 11.8, 5.9],
+          backgroundColor: ['#2e7d32','#66bb6a','#9ccc65','#c5e1a5','#e8f5e9'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom' }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
