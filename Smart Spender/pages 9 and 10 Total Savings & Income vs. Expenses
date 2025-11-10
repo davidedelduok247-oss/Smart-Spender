@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Total Savings & Income vs Expenses</title>
+<style>
+body{font-family:Arial;margin:20px;background:#f4f6f8}
+section{display:none;background:#fff;padding:15px;border-radius:8px;box-shadow:0 2px 6px #ccc;margin-top:10px}
+section.active{display:block}
+button{margin:5px;padding:8px 12px;border:none;border-radius:5px;cursor:pointer}
+input{margin:5px;padding:6px;width:120px}
+h2{margin-top:0}
+.result{margin-top:10px;font-weight:bold}
+</style>
+</head>
+<body>
+
+<h1>Pages 9 & 10 — Randy Pierre</h1>
+<div>
+  <button onclick="showPage('savings')">Page 9: Total Savings</button>
+  <button onclick="showPage('income')">Page 10: Income vs Expenses</button>
+</div>
+
+<!-- PAGE 9 -->
+<section id="savings" class="active">
+  <h2>Total Savings Calculator</h2>
+  <label>Initial ($): <input type="number" id="initial" value="1000"></label>
+  <label>Monthly Deposit ($): <input type="number" id="deposit" value="100"></label>
+  <label>Years: <input type="number" id="years" value="10"></label>
+  <label>Interest (%): <input type="number" id="rate" value="5"></label>
+  <button onclick="calcSavings()">Calculate</button>
+  <div class="result" id="saveResult"></div>
+</section>
+
+<!-- PAGE 10 -->
+<section id="income">
+  <h2>Income vs Expenses</h2>
+  <label>Income ($): <input type="number" id="incomeVal" value="3000"></label>
+  <label>Expenses ($): <input type="number" id="expenseVal" value="2200"></label>
+  <button onclick="calcBudget()">Calculate</button>
+  <div class="result" id="budgetResult"></div>
+</section>
+
+<script>
+function showPage(id){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+function calcSavings(){
+  let p = +document.getElementById("initial").value;
+  let d = +document.getElementById("deposit").value;
+  let y = +document.getElementById("years").value;
+  let r = (+document.getElementById("rate").value)/100/12;
+  let n = y*12;
+  let fv = p*Math.pow(1+r,n) + d*((Math.pow(1+r,n)-1)/r);
+  document.getElementById("saveResult").innerText = 
+    "Total Savings after "+y+" years: $" + fv.toFixed(2);
+}
+
+function calcBudget(){
+  let income = +document.getElementById("incomeVal").value;
+  let expense = +document.getElementById("expenseVal").value;
+  let net = income - expense;
+  document.getElementById("budgetResult").innerText = 
+    "Net Balance: $" + net.toFixed(2) + (net>=0?" (Surplus)":" (Deficit)");
+}
+</script>
+
+</body>
+</html>
