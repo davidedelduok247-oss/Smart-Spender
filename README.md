@@ -1,4 +1,6 @@
 Smart Spender – Budget Tracking Web App (Capstone Project)
+
+
 ■ Overview
 Smart Spender is a front-end budgeting web application created as a Capstone Project to demonstrate group collaboration, UI design, and simulated financial-tracking functionality. Built entirely with HTML, CSS, and JavaScript, the application simulates a login system, a dashboard, and realistic user interactions. Smart Spender empowers users to take control of their financial lives by allowing them to log income and expenses, set budgets, monitor spending trends, and track financial goals — all through an intuitive and easy-to-navigate interface. Whether someone is saving for a vacation, paying off debt, or simply trying to understand where their money goes each month, Smart Spender provides a clear and accessible demonstration of how a personal finance tool could work.
  
