@@ -1,88 +1,45 @@
-1. Project Planning
-Before writing code, define:
-Goal: Help users track spending, create budgets, and visualize financial habits.
-Target audience: Individuals, families, or small business users.
-Core features (MVP):
-User registration & login
-Personalized dashboard
-Add, edit, delete transactions
-Categorize expenses (e.g., food, bills, entertainment)
-View spending reports (charts, monthly summaries)
-Set and track budgets
-Future features (optional):
-Connect to bank accounts (via APIs like Plaid)
-alerts
-Export data to CSV or Excel
-Mobile-friendly version or app
+Smart Spender – Budget Tracking Web App (Capstone Project)
+■ Overview
+Smart Spender is a front-end budgeting web application created as a Capstone Project to demonstrate group collaboration, UI design, and simulated financial-tracking functionality. Built entirely with HTML, CSS, and JavaScript, the application simulates a login system, a dashboard, and realistic user interactions. Smart Spender empowers users to take control of their financial lives by allowing them to log income and expenses, set budgets, monitor spending trends, and track financial goals — all through an intuitive and easy-to-navigate interface. Whether someone is saving for a vacation, paying off debt, or simply trying to understand where their money goes each month, Smart Spender provides a clear and accessible demonstration of how a personal finance tool could work.
+ 
 
-⚙️ 2. Technical Stack
-Frontend (client-side)
-Languages: HTML5, CSS3 (Tailwind, Bootstrap), JavaScript (ES6+)
-Framework (optional): React, Vue, or Angular
-UI/UX: Modern and minimal design, responsive layout, data visualization with Chart.js or Recharts
-Backend (server-side)
-Languages: Node.js (Express), Python (Django/Flask), or PHP (Laravel)
-Responsibilities:
-User authentication (JWT or sessions)
-CRUD operations for budgets and transactions
-API endpoints for frontend
-Data validation and error handling
-Database
-Options: PostgreSQL, MySQL, or MongoDB
-Tables / Collections you’ll need:
-users (id, name, email, password_hash, preferences)
-transactions (id, user_id, date, category, amount, description)
-budgets (id, user_id, category, limit, month, year)
-settings (theme, notifications, etc.)
+■ Collaborators
+• David Edelduok
+• Miladys Perez
+• Maria Florez
+• Malik Wahab Rashid
+• Randy Pier
+ 
+■ Project Goals
+• Demonstrate how a budgeting system would operate. • Show collaborative UI planning and execution. • Simulate user login and dashboard behavior. • Provide a clean and modern front-end demonstration. • Build the interface using HTML, CSS, and JavaScript.
 
-🔐 3. Authentication & Security
-Secure password hashing (bcrypt, Argon2)
-Login, registration, and password reset
-Email verification (optional)
-Session or JWT token management
-HTTPS with SSL certificate
-Basic input validation and sanitization (to prevent XSS, SQL injection)
+■ Tech Stack
+• HTML5 (structure) • CSS3 (styling) • JavaScript (logic and simulation) • LocalStorage (fake database) • Canva or Figma (wireframes)
 
-🎨 4. Frontend Components
-Login/Register forms
-Dashboard: personalized greeting, summary of finances
-Transaction form: for adding new expenses or income
-Charts: spending breakdowns by category, time-based trends
-Budget planner: show limits, remaining amounts
-Profile settings page
+■ Folder Structure
+Smart-Spender/ • index.html – Login page • dashboard.html – Main dashboard • styles.css –
+All styling • script.js – Simulated backend logic
 
-📊 5. Features & Logic
-Transaction categorization
-Spending summary by date range
-Budget creation and tracking
-Visual analytics (charts, progress bars)
-Personalization:
-Greeting user by name
-Custom themes or preferences saved in DB
-Personalized suggestions (“You spent 20% more on dining this month”)
+■ How Login Works
+The login system uses a predefined demo account stored directly in JavaScript. JavaScript checks the credentials and simulates a ‘logged in’ session using LocalStorage. If credentials match, the user is redirected to the dashboard.
 
-☁️ 6. Deployment & Hosting
-Hosting: Vercel, Netlify (frontend) + Render, Heroku, or AWS (backend)
-Database: Supabase, Firebase, MongoDB Atlas, or AWS RDS
-Domain: purchase via Namecheap, Google Domains, etc.
-SSL Certificate: free with Let’s Encrypt
+■ Dashboard Features
+The dashboard displays mock financial data such as monthly budget, expenses, remaining balance, and sample transactions. These values can be customized for demonstration purposes.
 
-🧪 7. Testing
-Unit tests (Jest, Pytest)
-Integration tests for API routes
-Manual user testing for UI/UX
-Load testing (optional)
+■ Logout Feature
+A Logout button clears the LocalStorage session and returns the user to the login screen, simulating session handling in real applications.
 
-📱 8. Optional Enhancements
-Email or SMS notifications for overspending
-Mobile app (React Native or Flutter)
-Dark mode and customization
-Multi-currency support
-Export data as CSV or PDF
-AI-driven suggestions / summaries
+■ Running the Project
+To run the project, simply use Live Server in VS Code. No installation or backend setup is required.
 
-📘 9. Tools & Resources
-Version control: Git + GitHub
-Design tools: Figma or Adobe XD
-Task management: Trello, Notion, or Jira
-APIs: Plaid, OpenAI (for insights), or Currency Exchange APIs
+■ Demo Credentials
+Email: demo@smartspender.com Password: Password123!
+
+■ Limitations
+• No real authentication • No SQL • Not connected to real financial data • Intended only for demonstration
+
+■ Future Enhancements
+• Real backend with SQL or Firebase • Secure authentication • Dynamic charts • Editable categories and budgets • API integrations for bank data
+
+■ Conclusion
+Smart Spender demonstrates a clean UI, simulated functionality, and effective team collaboration. It fulfills all capstone project requirements while maintaining simplicity and clarity.
