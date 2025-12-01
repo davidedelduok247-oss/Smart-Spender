@@ -1,23 +1,20 @@
 <?php
 session_start();
+if (empty($_SESSION['signup_full_name']) || empty($_SESSION['signup_password'])) {
+    header('Location: signup1.php');
+    exit();
+}
 
-$errors = [
-  
-  'login' => $_SESSION['login_error'] ?? '', 
-  'register' => $SESSION['register_error'] ?? ''
-];
-$activeForm = $_SESSION['active_form'] ?? 'login';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['signup_Q1'] = $_POST['Q1'];
+    $_SESSION['signup_Q2'] = $_POST['Q2'];
+    $_SESSION['signup_Q3'] = $_POST['Q3'];
+    $_SESSION['signup_Q4'] = $_POST['Q4'];
 
-session_unset();
-
-function showError($error) {
-  return !empty($error) ? "<p class='error-message'>$error</p>" : '';
- }
-function isActiveForm($formName, $activeForm { 
-  return $formName === $activeForm ? 'active' : '';
- }
-
- ?>
+    header('Location: signup4.php');
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
