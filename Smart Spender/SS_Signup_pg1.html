@@ -29,7 +29,7 @@ session_start();
       <input id="first-name" name="first-name" type="text" placeholder="Enter your name" required>
       
       <button class="btn" type="submit">Next</button>
-        <a href="SS_Signup_pg2.html" aria-disabled="true">Sign up</a> <!--Double check the aria-disabled to ensure you cant go to the next page without putting in proper credentials-->
+        <a href="SS_Signup_pg2.php" aria-disabled="true">Sign up</a> 
 
 
  <?php
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['signup_full_name'] = $_POST['full_name'];
     $_SESSION['signup_email']     = $_POST['email'];
 
-    header('Location: signup2.php');
+    header('Location: SS_Signup_pg2.php');
     exit();
 }
 ?>
