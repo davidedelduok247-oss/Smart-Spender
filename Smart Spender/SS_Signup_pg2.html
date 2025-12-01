@@ -19,18 +19,19 @@
   <!-- Main content -->
   <main class="signup-main container">
     <h1>Create a password with atleast 8 characters, including one uppercase letter, one number, and one special character.</h1>
-    
+
+
     <form class="signup-form" action="page3.html" method="get">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" placeholder="Enter your email" required>
-      
-        <label for="Password">Password</label>
-      <input id="Password" name="Password" type="text" placeholder="Enter your name" required>
-      
-         <label for="Re-enter Password">Re-enter Password</label>
-      <input id="Re-enter Password" name="Re-enter Password" type="text" placeholder="Re-enter Password" required>
 
+        <label for="Password">Password</label>
+        <input id="Password" name="Password" type="text" placeholder="Enter your name" required>
+
+        <!--will need to add on this with php later on-->
       <button class="btn" type="submit">Next</button>
+      <a href="SS_Signup_pg3.html" aria-disabled="true"></a> <!--Double check the aria-disabled to ensure you cant go to the next page without putting in proper credentials-->
+
     </form>
   </main>
 </body>
