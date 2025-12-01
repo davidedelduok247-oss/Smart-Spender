@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['signup_Q3'] = $_POST['Q3'];
     $_SESSION['signup_Q4'] = $_POST['Q4'];
 
-    header('Location: signup4.php');
+    header('Location: SS_Signup_pg4.php');
     exit();
 }
 ?>
