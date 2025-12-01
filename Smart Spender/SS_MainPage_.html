@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,17 +53,24 @@
       <form class="screen" action="#" method="post">
         <h2>Sign in</h2>
 
+    <!-- Login Form -->
+
+            <?php if (!empty($_SESSION['login_error'])): ?>
+            <p style="color: red;"></p><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></p>
+        <?php endif; ?>
+
+
         <label>Email</label>
         <input type="email" placeholder="john@example.com" required />
 
         <label>Password</label>
         <input type="password" placeholder="******" required />
 
-        <button class="btn">Sign In</button>
+        <button class="btn" onclick="location.href='SS_BudgetOverview_pg7.html'">Sign In</button>
 
         <p class="muted">
           Don’t have an account?
-          <a href="page2.html" aria-disabled="true">Sign up</a>
+          <a href="SS_Signup_pg1.html" aria-disabled="true">Sign up</a>
         </p>
       </form>
     </aside>
