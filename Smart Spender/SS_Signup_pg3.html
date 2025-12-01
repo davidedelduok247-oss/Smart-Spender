@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+$errors = [
+  
+  'login' => $_SESSION['login_error'] ?? '', 
+  'register' => $SESSION['register_error'] ?? ''
+];
+$activeForm = $_SESSION['active_form'] ?? 'login';
+
+session_unset();
+
+function showError($error) {
+  return !empty($error) ? "<p class='error-message'>$error</p>" : '';
+ }
+function isActiveForm($formName, $activeForm { 
+  return $formName === $activeForm ? 'active' : '';
+ }
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +40,7 @@
   <!-- Main content -->
   <main class="signup-main container">
     <h1>Please select security questions</h1>
-    
+
     <form class="signup-form" action="page3.html" method="get">
         <label for="Q1">What is the middle name of your oldest sibling?</label>
         <input id="Q1" name="Q1" type="text" placeholder="" required>
@@ -36,7 +57,9 @@
         <label for="Q4">Who was your celebrity crush?</label>
       <input id="Q4" name="Q4" type="text" placeholder="" required>
 
+            <!--will need to add on this with php later on-->
       <button class="btn" type="submit">Next</button>
+
     </form>
   </main>
 </body>
