@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+$errors = [
+  
+  'login' => $_SESSION['login_error'] ?? '', 
+  'register' => $SESSION['register_error'] ?? ''
+];
+$activeForm = $_SESSION['active_form'] ?? 'login';
+
+session_unset();
+
+function showError($error) {
+  return !empty($error) ? "<p class='error-message'>$error</p>" : '';
+ }
+function isActiveForm($formName, $activeForm { 
+  return $formName === $activeForm ? 'active' : '';
+ }
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +40,7 @@
   <!-- Main content -->
   <main class="signup-main container">
     <h1>Simple Quiz</h1>
-    
+
     <form class="signup-form" action="page3.html" method="get">
         
         <h2 id="Question">How often do you recieve income?</h2>
@@ -29,9 +50,12 @@
             <button class ="qbtn">Irregular</button>
 
          <h3 id="Question">What is your annual salary?</h2>      
-            <input id="email" name="email" type="email" placeholder="Enter your email" required>
+            <input id="salary" name="salary" type="salary" placeholder="Annual salary" required>
 
+                  <!-- will need to add on this with php later on -->
       <button class="btn" type="submit">Next</button>
+               <!--Double check the aria-disabled to ensure you cant go to the next page without putting in proper credentials-->
+<!--the href is supposed to lead you to your personal account-->
     </form>
   </main>
 </body>
