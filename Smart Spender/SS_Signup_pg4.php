@@ -1,11 +1,12 @@
 <?php
+
 session_start();
 require_once 'php.php';
 
 if (empty($_SESSION['signup_full_name']) || empty($_SESSION['signup_password']) ||
     empty($_SESSION['signup_Q1']) || empty($_SESSION['signup_Q2']) ||
     empty($_SESSION['signup_Q3']) || empty($_SESSION['signup_Q4'])) {
-    header('Location: signup1.php');
+    header('Location: SS_Signup_pg1.php');
     exit();
 }
 
@@ -86,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
 ?>
 
 <!DOCTYPE html>
