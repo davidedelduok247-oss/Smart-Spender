@@ -1,18 +1,33 @@
 <?php
 session_start();
-if (empty($_SESSION['signup_full_name']) || empty($_SESSION['signup_password'])) {
-    header('Location: signup1.php');
-    exit();
-}
+
+// OPTIONAL: If you want to force going through previous steps, uncomment:
+// if (empty($_SESSION['signup_full_name']) || empty($_SESSION['signup_email'])) {
+//     header("Location: SS_Signup_pg1.php");
+//     exit();
+// }
+
+$error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $_SESSION['signup_Q1'] = $_POST['Q1'];
-    $_SESSION['signup_Q2'] = $_POST['Q2'];
-    $_SESSION['signup_Q3'] = $_POST['Q3'];
-    $_SESSION['signup_Q4'] = $_POST['Q4'];
+    // Grab answers from the form
+    $Q1 = trim($_POST['Q1'] ?? '');
+    $Q2 = trim($_POST['Q2'] ?? '');
+    $Q3 = trim($_POST['Q3'] ?? '');
+    $Q4 = trim($_POST['Q4'] ?? '');
 
-    header('Location: SS_Signup_pg4.php');
-    exit();
+    if ($Q1 === '' || $Q2 === '' || $Q3 === '' || $Q4 === '') {
+        $error = "Please answer all 4 questions.";
+    } else {
+        // Save into session to use on page 4
+        $_SESSION['signup_Q1'] = $Q1;
+        $_SESSION['signup_Q2'] = $Q2;
+        $_SESSION['signup_Q3'] = $Q3;
+        $_SESSION['signup_Q4'] = $Q4;
+
+        header("Location: SS_Signup_pg4.php");
+        exit();
+    }
 }
 ?>
 
@@ -38,7 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <main class="signup-main container">
     <h1>Please select security questions</h1>
 
-    <form class="signup-form" action="page3.html" method="get">
+        <?php if ($error): ?>
+        <p style="color:red;"><?php echo $error; ?></p>
+    <?php endif; ?>
+
+    <form class="signup-form" action="SS_Signup_pg4.php" method="get">
         <label for="Q1">What is the middle name of your oldest sibling?</label>
         <input id="Q1" name="Q1" type="text" placeholder="" required>
 
