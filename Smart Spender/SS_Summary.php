@@ -73,59 +73,70 @@ sort($allCategories);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <a href="SS_dashboard.php">Dashboard</a> |
-        <a href="SS_basic_plan.php">Plan 1: Budget</a> |
-        <a href="SS_detailed_plan.php">Plan 2: Expenses</a> |
-        <a href="SS_summary.php">Summary</a> |
-        <a href="SS_logout.php">Logout</a>
+    <!-- Top navigation bar -->
+    <nav class="topnav">
+        <div class="container topnav-inner">
+            <div class="brand">
+                <span class="logo">&#128178;</span>
+                <span class="name"><strong>Smart</strong> Spender</span>
+            </div>
+            <div class="topnav-links">
+                <a href="SS_dashboard.php">Dashboard</a>
+                <a href="SS_basic_plan.php">Plan 1: Budget</a>
+                <a href="SS_detailed_plan.php">Plan 2: Expenses</a>
+                <a href="SS_summary.php" class="active">Summary</a>
+                <a href="SS_logout.php">Logout</a>
+            </div>
+        </div>
     </nav>
-    <hr>
 
-    <h1>Overall Summary for <?php echo htmlspecialchars($user_name); ?></h1>
+    <!-- Main summary content -->
+    <div class="container summary-page">
+        <h1>Overall Summary for <?php echo htmlspecialchars($user_name); ?></h1>
 
-    <section>
-        <h2>Income</h2>
-        <p><strong>Income Frequency:</strong> <?php echo htmlspecialchars($income_frequency ?: 'Not set'); ?></p>
-        <p><strong>Annual Salary:</strong> $<?php echo number_format($annual_salary, 2); ?></p>
-        <p><strong>Estimated Monthly Income:</strong> $<?php echo number_format($monthly_income, 2); ?></p>
-    </section>
+        <section>
+            <h2>Income</h2>
+            <p><strong>Income Frequency:</strong> <?php echo htmlspecialchars($income_frequency ?: 'Not set'); ?></p>
+            <p><strong>Annual Salary:</strong> $<?php echo number_format($annual_salary, 2); ?></p>
+            <p><strong>Estimated Monthly Income:</strong> $<?php echo number_format($monthly_income, 2); ?></p>
+        </section>
 
-    <section>
-        <h2>Overall Budget vs Actual Spending</h2>
-        <p><strong>Total Budgeted (all categories):</strong> $<?php echo number_format($total_budget, 2); ?></p>
-        <p><strong>Total Spent (all time):</strong> $<?php echo number_format($total_spent, 2); ?></p>
-        <p><strong>Difference (Income - Total Spent per Month is not exact)</strong></p>
-    </section>
+        <section>
+            <h2>Overall Budget vs Actual Spending</h2>
+            <p><strong>Total Budgeted (all categories):</strong> $<?php echo number_format($total_budget, 2); ?></p>
+            <p><strong>Total Spent (all time):</strong> $<?php echo number_format($total_spent, 2); ?></p>
+            <p><strong>Difference (Income - Total Spent per Month is not exact)</strong></p>
+        </section>
 
-    <section>
-        <h2>By Category</h2>
-        <?php if (empty($allCategories)): ?>
-            <p>No budget or expense data yet. Try creating a budget in Plan 1 and adding expenses in Plan 2.</p>
-        <?php else: ?>
-            <table border="1" cellpadding="5" cellspacing="0">
-                <tr>
-                    <th>Category</th>
-                    <th>Budgeted</th>
-                    <th>Spent</th>
-                    <th>Difference (Budget - Spent)</th>
-                </tr>
-                <?php foreach ($allCategories as $cat): 
-                    $b = $budgetByCat[$cat] ?? 0;
-                    $s = $spentByCat[$cat] ?? 0;
-                    $diff = $b - $s;
-                ?>
+        <section>
+            <h2>By Category</h2>
+            <?php if (empty($allCategories)): ?>
+                <p>No budget or expense data yet. Try creating a budget in Plan 1 and adding expenses in Plan 2.</p>
+            <?php else: ?>
+                <table class="summary-table">
                     <tr>
-                        <td><?php echo htmlspecialchars($cat); ?></td>
-                        <td>$<?php echo number_format($b, 2); ?></td>
-                        <td>$<?php echo number_format($s, 2); ?></td>
-                        <td>$<?php echo number_format($diff, 2); ?></td>
+                        <th>Category</th>
+                        <th>Budgeted</th>
+                        <th>Spent</th>
+                        <th>Difference (Budget - Spent)</th>
                     </tr>
-                <?php endforeach; ?>
-            </table>
-        <?php endif; ?>
-    </section>
+                    <?php foreach ($allCategories as $cat):
+                        $b = $budgetByCat[$cat] ?? 0;
+                        $s = $spentByCat[$cat] ?? 0;
+                        $diff = $b - $s;
+                    ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($cat); ?></td>
+                            <td>$<?php echo number_format($b, 2); ?></td>
+                            <td>$<?php echo number_format($s, 2); ?></td>
+                            <td>$<?php echo number_format($diff, 2); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            <?php endif; ?>
+        </section>
 
-    <p><a href="SS_dashboard.php">Back to Dashboard</a></p>
+        <p><a href="SS_dashboard.php">Back to Dashboard</a></p>
+    </div>
 </body>
 </html>
