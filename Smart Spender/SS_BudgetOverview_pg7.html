@@ -4,29 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Spender - Budget Overview</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="container">
-    <img src="smart-spender-logo.png" alt="Smart Spender Logo" class="logo">
-    <h2>See where your <span style="color:#4CAF50;">money</span> goes and take control of your <span style="color:#4CAF50;">spending</span>...</h2>
+  <div class="container budget-page">
+    <img src="smart-spender-logo.png" alt="Smart Spender Logo" class="budget-logo">
 
-    <div style="max-width:500px;margin:0 auto;">
+    <h2 class="budget-title">
+      See where your <span class="highlight">money</span> goes and take control of your
+      <span class="highlight">spending</span>...
+    </h2>
+
+    <div class="chart-wrapper">
       <canvas id="spendingChart"></canvas>
     </div>
 
     <div class="budget-summary">
-      <h3>Budget Overview 💰</h3>
-      <table style="margin:0 auto;">
+      <h3>Budget Overview &#128181;</h3> 
+      <table class="budget-table">
         <tr><td>Monthly Budget:</td><td>$2000</td></tr>
         <tr><td>Total Spent:</td><td>$1865</td></tr>
         <tr><td>Remaining:</td><td>$135</td></tr>
       </table>
     </div>
 
-    <div class="notes" style="margin-top:20px;">
-      <p>✅ You stayed within your budget — great job!</p>
+    <div class="notes">
+      <p>&#9989; You stayed within your budget — great job!</p> 
       <ul>
         <li>You spent 22% more on dining this month. Consider eating out less next month.</li>
         <li>Transport costs are lower than average. Keep it up!</li>
@@ -34,8 +38,9 @@
       </ul>
     </div>
 
-    <div class="nav-links" style="margin-top:40px;">
-      <a href="index.html">← Back to Home</a> |
+    <div class="nav-links">
+      <a href="index.html">← Back to Home</a>
+      <span class="nav-separator">|</span>
       <a href="page8.html">Next →</a>
     </div>
   </div>
