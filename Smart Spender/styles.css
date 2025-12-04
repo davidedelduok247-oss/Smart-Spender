@@ -6,7 +6,7 @@
   --ink:#1a1a1a;            /* main text color */
   --muted:#6b6b6b;          /* secondary text color */
   --radius:14px;              /* border radius */
-  --light_green: #32c610;     /* Button color for questions */
+    --light_green: #32c610;     /* Button color for questions */
 
 }
 
@@ -186,4 +186,233 @@ body{
     width:100%; padding:12px;
     background:var(--green); color:white; border:0; border-radius:10px;
     font-weight:600; cursor:pointer;
+}
+
+/* ===== Summary Page (SS_Summary.php) ===== */
+
+.topnav{
+  background: var(--green);
+  color: #fff;
+}
+
+.topnav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.topnav-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.95rem;
+}
+
+.topnav a{
+  color: #eaf4ef;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.topnav a:hover{
+  text-decoration: underline;
+}
+
+.topnav a.active{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* main summary area */
+.summary-page{
+  padding: 30px 0 50px;
+}
+
+.summary-page h1{
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+.summary-page section{
+  background: #ffffff;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.summary-page section h2{
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #174d38;
+}
+
+/* link at bottom */
+.summary-page p a{
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* table styling */
+.summary-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.summary-table th,
+.summary-table td{
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.summary-table th{
+  background: var(--mint);
+  color: #174d38;
+  font-weight: 600;
+}
+
+.summary-table tr:nth-child(even){
+  background: #f5f5f5;
+}
+
+.summary-table tr:hover{
+  background: #e8f3ec;
+}
+
+/* make nav stack nicely on small screens */
+@media (max-width: 720px){
+  .topnav-inner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .topnav-links{
+    gap: 10px;
+  }
+
+  .summary-page{
+    padding: 20px 0 40px;
+  }
+}
+
+/* ===== Budget Overview page (SS_BudgetOverview_pg7.html) ===== */
+
+.budget-page{
+  padding: 40px 0 60px;
+  text-align: center;
+}
+
+.budget-logo{
+  height: 52px;
+  width: auto;
+  margin-bottom: 18px;
+}
+
+.budget-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+/* reuse .highlight color already defined */
+
+.chart-wrapper{
+  max-width: 500px;
+  margin: 0 auto 32px;
+}
+
+/* summary card */
+.budget-summary{
+  max-width: 420px;
+  margin: 0 auto 24px;
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.budget-summary h3{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+.budget-table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.budget-table td{
+  padding: 6px 4px;
+}
+
+.budget-table td:first-child{
+  text-align: left;
+  font-weight: 500;
+}
+
+.budget-table td:last-child{
+  text-align: right;
+}
+
+/* notes card */
+.notes{
+  max-width: 520px;
+  margin: 0 auto 30px;
+  background: rgba(255,255,255,0.9);
+  padding: 16px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.notes p{
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.notes ul{
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* nav links at bottom */
+.nav-links{
+  margin-top: 24px;
+  font-size: 0.95rem;
+}
+
+.nav-links a{
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover{
+  text-decoration: underline;
+}
+
+.nav-separator{
+  margin: 0 8px;
+  color: var(--muted);
+}
+
+/* responsive tweaks */
+@media (max-width: 600px){
+  .budget-page{
+    padding: 24px 0 40px;
+  }
+  .budget-title{
+    font-size: 1.3rem;
+  }
 }
