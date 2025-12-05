@@ -423,3 +423,57 @@ body{
   margin: 0 0 10px;
   text-align: center;
 }
+
+/* ===== Dashboard page (SS_dashboard.php) ===== */
+
+.dashboard-page{
+  padding: 30px 0 50px;
+}
+
+.dashboard-page h1{
+  font-size: 1.8rem;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.dashboard-section{
+  background: #ffffff;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.dashboard-section h2{
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #174d38;
+}
+
+.plan-list{
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 0;
+}
+
+.plan-list li{
+  margin-bottom: 16px;
+}
+
+.plan-btn{
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--green);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.plan-btn:hover{
+  filter: brightness(1.05);
+}
+
