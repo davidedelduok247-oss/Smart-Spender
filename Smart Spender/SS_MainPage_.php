@@ -1,6 +1,5 @@
 <?php
 session_start();
-
  ?>
 
 <!DOCTYPE html>
@@ -14,9 +13,7 @@ session_start();
   <!-- Top bar -->
   <header class="topbar">
     <button class="menu-btn" aria-label="menu">≡</button>
-    <div class="search">
-      <input type="text" placeholder="Search" />
-    </div>
+
     <div class="icons">
       <span class="icon">&#128100</span>
       <span class="icon">&#9881</span>
