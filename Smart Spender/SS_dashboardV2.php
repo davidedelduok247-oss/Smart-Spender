@@ -43,7 +43,7 @@ $monthly_income = $annual_salary > 0 ? $annual_salary / 12 : 0;
                 <a href="SS_dashboard.php" class="active">Dashboard</a>
                 <a href="SS_basic_plan.php">Plan 1: Budget</a>
                 <a href="SS_detailed_plan.php">Plan 2: Expenses</a>
-                <a href="SS_summary.php">Summary</a>
+                <a href="SS_Summary.php">Summary</a>
                 <a href="SS_logout.php">Logout</a>
             </div>
         </div>
