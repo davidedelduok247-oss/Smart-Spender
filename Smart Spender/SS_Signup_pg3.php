@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-// OPTIONAL: If you want to force going through previous steps, uncomment:
-// if (empty($_SESSION['signup_full_name']) || empty($_SESSION['signup_email'])) {
-//     header("Location: SS_Signup_pg1.php");
-//     exit();
-// }
-
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($Q1 === '' || $Q2 === '' || $Q3 === '' || $Q4 === '') {
         $error = "Please answer all 4 questions.";
     } else {
-        // Save into session to use on page 4
+        // to use on page 4
         $_SESSION['signup_Q1'] = $Q1;
         $_SESSION['signup_Q2'] = $Q2;
         $_SESSION['signup_Q3'] = $Q3;
