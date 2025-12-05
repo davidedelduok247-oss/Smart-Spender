@@ -2,7 +2,6 @@
 $name = $_POST['first-name'] ?? '(no name received)';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
