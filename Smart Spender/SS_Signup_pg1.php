@@ -2,10 +2,7 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Page 1 now ONLY collects the full name
     $_SESSION['signup_full_name'] = $_POST['first-name'];
-
-    // Go to page 2 (email + password)
     header("Location: SS_Signup_pg2.php");
     exit();
 }
